@@ -4,6 +4,7 @@ from distutils.core import setup
 setup(
     name='pysigset',
     version='0.1',
+    py_modules=['pysigset'],
     description='Signal blocking under Linux',
     long_description=
         ('Wrappers around ctypes access to sigprocmask(2) and friends.'),
