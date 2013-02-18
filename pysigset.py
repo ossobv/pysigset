@@ -118,7 +118,7 @@ def mask2list(bitmask, number=1):
 libc = ctypes.CDLL('libc.so.6')
 
 
-def _wrap(function, sigset_args, *args):
+def _wrap(function, sigset_args):
     """
     Wrap libc functions taking a sigset_t, ensuring that ctypes.pointer() is
     called on the appropriate arguments.
@@ -136,39 +136,39 @@ def _wrap(function, sigset_args, *args):
     return wrapped
 
 
-# int sigemptyset(sigset_t *set);
 sigemptyset = _wrap(libc.sigemptyset, [0])
+sigemptyset.__doc__ = 'int sigemptyset(sigset_t *set)'
 
-# int sigfillset(sigset_t *set);
 sigfillset = _wrap(libc.sigfillset, [0])
+sigfillset.__doc__ = 'int sigfillset(sigset_t *set)'
 
-# int sigaddset(sigset_t *set, int signum);
 sigaddset = _wrap(libc.sigaddset, [0])
+sigaddset.__doc__ = 'int sigaddset(sigset_t *set, int signum)'
 
-# int sigdelset(sigset_t *set, int signum);
 sigdelset = _wrap(libc.sigdelset, [0])
+sigdelset.__doc__ = 'int sigdelset(sigset_t *set, int signum)'
 
-# int sigismember(const sigset_t *set, int signum);
 sigismember = _wrap(libc.sigismember, [0])
+sigismember.__doc__ = 'int sigismember(const sigset_t *set, int signum)'
 
-# int sigpending(sigset_t *set)
 sigpending = _wrap(libc.sigpending, [0])
+sigpending.__doc__ = 'int sigpending(sigset_t *set)'
 
-# int sigprocmask(int how, const sigset_t *set, sigset_t *oldset)
 sigprocmask = _wrap(libc.sigprocmask, [1, 2])
+sigprocmask.__doc__ = ('int sigprocmask(int how, const sigset_t *set, '
+                       'sigset_t *oldset)')
 
-# int sigsuspend(const sigset_t *mask)
+# > Normally, sigsuspend() is used in conjunction with sigprocmask(2) in order
+# > to prevent delivery of a signal during the execution of a critical code
+# > section. The caller first blocks the signals with sigprocmask(2). When the
+# > critical code has completed, the caller then waits for the signals by
+# > calling sigsuspend() with the signal mask that was returned by
+# > sigprocmask(2) (in the oldset argument).
 #
-# Normally, sigsuspend() is used in conjunction with sigprocmask(2) in order to
-# prevent delivery of a signal during the execution of a critical code section.
-# The caller first blocks the signals with sigprocmask(2). When the critical
-# code has completed, the caller then waits for the signals by calling
-# sigsuspend() with the signal mask that was returned by sigprocmask(2) (in the
-# oldset argument).
-#
-# <-- Shouldn't that be: "returned by sigpending(2)"?? Calling suspend after
+# Shouldn't that be: "returned by sigpending(2)"?? Calling suspend after
 # unblocking causes a new block.
 sigsuspend = _wrap(libc.sigsuspend, [0])
+sigsuspend.__doc__ = 'int sigsuspend(const sigset_t *mask)'
 
 
 class suspended_signals(object):
