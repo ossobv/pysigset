@@ -1,12 +1,64 @@
-pysigset, signal blocking under linux
-=====================================
+pysigset, signal blocking under GNU/Linux
+=========================================
 
-Provides access to sigprocmask(2) and friends and convenience wrappers to
-python application developers wanting to SIG_BLOCK and SIG_UNBLOCK signals in
-critical sections of their code.
+Provides access to sigprocmask(2) and friends and convenience wrappers
+to python application developers wanting to SIG\_BLOCK and SIG\_UNBLOCK
+signals in critical sections of their code.
 
-Requires ctypes access to libc.so.6. See usage example at the bottom.
 
+Most common usage
+-----------------
+
+    from signal import SIGINT, SIGTERM
+    from pysigset import suspended_signals
+
+    with suspended_signals(SIGINT, SIGTERM):
+        # Signals are blocked here..
+        pass
+    # Any pending signal is fired now..
+
+
+Also available
+--------------
+
+    sigaddset(*args)
+        int sigaddset(sigset_t *set, int signum)
+    
+    sigdelset(*args)
+        int sigdelset(sigset_t *set, int signum)
+    
+    sigemptyset(*args)
+        int sigemptyset(sigset_t *set)
+    
+    sigfillset(*args)
+        int sigfillset(sigset_t *set)
+    
+    sigismember(*args)
+        int sigismember(const sigset_t *set, int signum)
+    
+    sigpending(*args)
+        int sigpending(sigset_t *set)
+    
+    sigprocmask(*args)
+        int sigprocmask(int how, const sigset_t *set, sigset_t *oldset)
+    
+    sigsuspend(*args)
+        int sigsuspend(const sigset_t *mask)
+
+
+Similar tools
+-------------
+
+[python-signalfd](https://pypi.python.org/pypi/python-signalfd) provides
+access to ``sigprocmask`` and ``signalfd``. Its advantage is access to
+``signalfd``. Its disadvantage is a compilation requirement.
+
+pysigset has a pythonic interface and requires only ``ctypes`` access to
+``libc.so.6``.
+
+
+Copyright
+---------
 
 Copyright 2013, Walter Doekes (OSSO B.V.) <wjdoekes osso nl>
 

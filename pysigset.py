@@ -1,6 +1,6 @@
 """
-pysigset, signal blocking under linux
-=====================================
+pysigset, signal blocking under GNU/Linux
+=========================================
 
 Provides access to sigprocmask(2) and friends and convenience wrappers to
 python application developers wanting to SIG_BLOCK and SIG_UNBLOCK signals in
