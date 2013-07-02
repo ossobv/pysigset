@@ -1,13 +1,14 @@
 """
-pysigset, signal blocking under GNU/Linux
-=========================================
+pysigset, signal blocking under GNU/Linux & OS X
+================================================
 
 Provides access to sigprocmask(2) and friends and convenience wrappers to
 python application developers wanting to SIG_BLOCK and SIG_UNBLOCK signals in
 critical sections of their code.
 
-Requires ctypes access to libc.so.6. See usage example at the bottom.
+Requires ctypes access to libc.so.6 or libSystem.B.dylib.
 
+See usage example at the bottom.
 
 Copyright 2013, Walter Doekes (OSSO B.V.) <wjdoekes osso nl>
 
@@ -26,6 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """
 import ctypes
+import platform
 import signal
 
 
@@ -115,7 +117,10 @@ def mask2list(bitmask, number=1):
 
 
 # Time to get the goodies, and wrapping them.
-libc = ctypes.CDLL('libc.so.6')
+if platform.system() == 'Darwin':
+  libc = ctypes.CDLL('libSystem.B.dylib')
+else:
+  libc = ctypes.CDLL('libc.so.6')
 
 
 def _wrap(function, sigset_args):
