@@ -1,5 +1,5 @@
-pysigset, signal blocking under GNU/Linux
-=========================================
+pysigset, signal blocking under GNU/Linux & OS X
+================================================
 
 Provides access to sigprocmask(2) and friends and convenience wrappers
 to python application developers wanting to SIG\_BLOCK and SIG\_UNBLOCK
@@ -54,7 +54,7 @@ access to ``sigprocmask`` and ``signalfd``. Its advantage is access to
 ``signalfd``. Its disadvantage is a compilation requirement.
 
 pysigset has a pythonic interface and requires only ``ctypes`` access to
-``libc.so.6``.
+``libc.so.6`` or ``libSystem.B.dylib``.
 
 
 Copyright
