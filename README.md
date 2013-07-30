@@ -60,7 +60,7 @@ pysigset has a pythonic interface and requires only ``ctypes`` access to
 Changes
 -------
 
-### ????-??-??: 0.2a
+### 2013-07-30: 0.2
 
  - Add support for OS X / Darwin
    (thanks Dan Sully (dsully))
