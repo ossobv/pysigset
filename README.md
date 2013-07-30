@@ -64,6 +64,7 @@ Changes
 
  - Add support for OS X / Darwin
    (thanks Dan Sully (dsully))
+ - Add support for easy uploading to PyPI.
 
 ### 2013-04-15: 0.1
 
