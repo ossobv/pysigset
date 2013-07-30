@@ -56,6 +56,7 @@ access to ``sigprocmask`` and ``signalfd``. Its advantage is access to
 pysigset has a pythonic interface and requires only ``ctypes`` access to
 ``libc.so.6`` or ``libSystem.B.dylib``.
 
+
 Changes
 -------
 
