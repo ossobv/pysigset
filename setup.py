@@ -1,16 +1,18 @@
 #!/usr/bin/env python
 from distutils.core import setup
 
+with open('README.txt') as file:
+    long_description = file.read()
+
 setup(
     name='pysigset',
     # Trying to use a PEP386 and distutils.version.StrictVersion compatible
     # versioning scheme here: 0.2a sorts before 0.2 and will mean
     # not-exactly-0.2-yet.
-    version='0.2',
+    version='0.2.1a',
     py_modules=['pysigset'],
     description='Signal blocking under Linux & OS X',
-    long_description=('Wrappers around ctypes access to sigprocmask(2) and '
-                      'friends.'),
+    long_description=long_description,
     author='Walter Doekes',
     author_email='wjdoekes@osso.nl',
     url='https://github.com/ossobv/pysigset',

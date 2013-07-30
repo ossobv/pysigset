@@ -60,6 +60,10 @@ pysigset has a pythonic interface and requires only ``ctypes`` access to
 Changes
 -------
 
+### 2013-07-30: 0.2.1a
+
+ - Fix so the RST is displayed on PyPI.
+
 ### 2013-07-30: 0.2
 
  - Add support for OS X / Darwin
