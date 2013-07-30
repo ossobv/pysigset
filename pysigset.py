@@ -118,9 +118,9 @@ def mask2list(bitmask, number=1):
 
 # Time to get the goodies, and wrapping them.
 if platform.system() == 'Darwin':
-  libc = ctypes.CDLL('libSystem.B.dylib')
-else:
-  libc = ctypes.CDLL('libc.so.6')
+    libc = ctypes.CDLL('libSystem.B.dylib')
+else:  # platform.system() == 'Linux'
+    libc = ctypes.CDLL('libc.so.6')
 
 
 def _wrap(function, sigset_args):
