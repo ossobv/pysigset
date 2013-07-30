@@ -3,20 +3,25 @@ from distutils.core import setup
 
 setup(
     name='pysigset',
-    version='0.1',
+    # Trying to use a PEP386 and distutils.version.StrictVersion compatible
+    # versioning scheme here: 0.2a sorts before 0.2 and will mean
+    # not-exactly-0.2-yet.
+    version='0.2a',
     py_modules=['pysigset'],
-    description='Signal blocking under Linux',
-    long_description=
-        ('Wrappers around ctypes access to sigprocmask(2) and friends.'),
+    description='Signal blocking under Linux & OS X',
+    long_description=('Wrappers around ctypes access to sigprocmask(2) and '
+                      'friends.'),
     author='Walter Doekes',
     author_email='wjdoekes@osso.nl',
     url='https://github.com/ossobv/pysigset',
     license='GPLv3+',
-    platforms=('linux',),
+    platforms=('linux', 'darwin'),
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
+        ('License :: OSI Approved :: GNU General Public License v3 or later '
+         '(GPLv3+)'),
+        'Operating System :: MacOS :: MacOS X',
         'Operating System :: POSIX :: Linux',
         'Programming Language :: Python :: 2',
         'Topic :: Software Development :: Libraries',
