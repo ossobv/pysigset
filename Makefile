@@ -7,7 +7,7 @@ OBJECTS = $(patsubst %.py,%.pyc,$(SOURCES)) $(patsubst %.py,%.pyo,$(SOURCES))
 default: dist
 
 clean:
-	$(RM) -r MANIFEST README.txt README.rst dist $(OBJECTS)
+	$(RM) -r MANIFEST README.txt dist $(OBJECTS)
 
 dist: README.rst $(SOURCES) MANIFEST.in
 	# sdist likes a reStructuredText README.txt 
