@@ -50,7 +50,7 @@ Also available
 Similar tools
 -------------
 
-`python-signalfd <https://pypi.python.org/pypi/python-signalfd>`_
+`python-signalfd <https://pypi.python.org/pypi/python-signalfd>`__
 provides access to ``sigprocmask`` and ``signalfd``. Its advantage is
 access to ``signalfd``. Its disadvantage is a compilation requirement.
 
@@ -60,8 +60,8 @@ pysigset has a pythonic interface and requires only ``ctypes`` access to
 Changes
 -------
 
-????-??-??: 0.2.2a
-~~~~~~~~~~~~~~~~~~
+2015-05-23: 0.2.2
+~~~~~~~~~~~~~~~~~
 
 -  Fix so we can install using setup.py again.
 

@@ -60,7 +60,7 @@ pysigset has a pythonic interface and requires only ``ctypes`` access to
 Changes
 -------
 
-### ????-??-??: 0.2.2a
+### 2015-05-23: 0.2.2
 
  - Fix so we can install using setup.py again.
 
