@@ -10,7 +10,7 @@ Requires ctypes access to libc.so.6 or libSystem.B.dylib.
 
 See usage example at the bottom.
 
-Copyright 2013, Walter Doekes (OSSO B.V.) <wjdoekes osso nl>
+Copyright 2013-2015, Walter Doekes (OSSO B.V.) <wjdoekes osso nl>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

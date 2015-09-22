@@ -60,6 +60,13 @@ pysigset has a pythonic interface and requires only ``ctypes`` access to
 Changes
 -------
 
+2015-09-22: 0.3.2
+~~~~~~~~~~~~~~~~~
+
+-  Python 3 compatibility (thanks Kevin Pouget).
+-  Update version, update trove classifiers; adding Python 3, moving to
+   Production/Stable.
+
 2015-05-23: 0.2.2
 ~~~~~~~~~~~~~~~~~
 
@@ -84,7 +91,7 @@ Changes
 Copyright
 ---------
 
-Copyright 2013, Walter Doekes (OSSO B.V.)
+Copyright 2013-2015, Walter Doekes (OSSO B.V.)
 
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
