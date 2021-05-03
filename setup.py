@@ -24,7 +24,7 @@ setup(
     # Trying to use a PEP386 and distutils.version.StrictVersion compatible
     # versioning scheme here: 0.2a sorts before 0.2 and will mean
     # not-exactly-0.2-yet.
-    version='0.3.2',
+    version='0.4.0',
     py_modules=['pysigset'],
     description='Signal blocking under Linux & OS X',
     long_description=long_description,
