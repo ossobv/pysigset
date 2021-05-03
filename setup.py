@@ -31,13 +31,13 @@ setup(
     author='Walter Doekes',
     author_email='wjdoekes+pysigset@osso.nl',
     url='https://github.com/ossobv/pysigset',
-    license='GPLv3+',
+    license='LGPLv3+',
     platforms=('linux', 'darwin'),
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
-        ('License :: OSI Approved :: GNU General Public License v3 or later '
-         '(GPLv3+)'),
+        ('License :: OSI Approved :: GNU Lesser General Public License v3 or '
+         'later (LGPLv3+)'),
         'Operating System :: MacOS :: MacOS X',
         'Operating System :: POSIX :: Linux',
         'Programming Language :: Python :: 2',
